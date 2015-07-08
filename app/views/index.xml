@@ -1,0 +1,16 @@
+<Alloy>
+	<!-- Default App Window -->
+	<Require id="index" src="form" platform="android" /> 
+	
+    <!-- iOS Window -->
+    <NavigationWindow id="nav" platform="ios" class="container">
+    		<Require src="form" />
+    </NavigationWindow>
+    
+    <!-- MobileWeb -->
+    <Window platform="mobileweb">
+    <NavigationGroup id="nav" class="container">
+    	<Require src="form" />
+    </NavigationGroup>
+    </Window>
+</Alloy>

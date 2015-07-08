@@ -1,0 +1,12 @@
+<Alloy>
+	<!--
+		This view wraps all of the child views/lists etc. Creates a base layout, vertically aligned.
+	-->
+	<Window title="HADA">
+			
+			<ScrollView layout="vertical" id="wrapper">
+								
+			</ScrollView>
+
+	</Window>
+</Alloy>
