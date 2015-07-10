@@ -257,6 +257,7 @@ function generateSendButton(){
 			top: 5,
 			bottom: 15,
 			width: 100,
+			height: 50,
 			title: 'Enviar',
 			id: 'submitForm',
 			name: 'submit',
