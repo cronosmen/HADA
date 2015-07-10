@@ -1,0 +1,1 @@
+/Users/enrique/Documents/Appcelerator_Studio_Workspace/HADA/Resources/alloy/CFG.js

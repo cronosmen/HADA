@@ -1,0 +1,1 @@
+/Users/enrique/Documents/Appcelerator_Studio_Workspace/HADA/Resources/iphone/alloy/sync/properties.js
