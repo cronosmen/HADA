@@ -257,6 +257,7 @@ function generateSendButton(){
 			top: 5,
 			bottom: 15,
 			width: 100,
+			height: 50,
 			title: 'Enviar',
 			id: 'submitForm',
 			name: 'submit',
@@ -389,7 +390,7 @@ function generateFieldsQuestion(container, field, groupId, questionId){
 			});
 			
 			container.add(fieldText);
-
+		
 			
 			fieldText.addEventListener("change", function(e){
 				processQuestionResponse(field.name, e.source.value);
@@ -406,6 +407,12 @@ function generateFieldsQuestion(container, field, groupId, questionId){
 				color:"#336699"
 				
 			});
+			
+			if(Ti.Platform.osname == 'iphone'){
+				fieldTextArea.top = 10;
+				fieldTextArea.left = 5;
+			}
+				
 			
 			fieldTextArea.addEventListener("change", function(e){
 				processQuestionResponse(field.name, e.source.value);
@@ -427,6 +434,9 @@ function generateGroupQuestions(questionGroupView, groupQuestionObject, groupId)
 				height: 60,
 				layout: 'horizontal'
 			});
+			
+			if(Ti.Platform.osname == 'iphone')
+				viewContainer.height = 40;
 				
 			questionGroupView.add(viewContainer);
 
@@ -453,12 +463,20 @@ function generateGroupQuestions(questionGroupView, groupQuestionObject, groupId)
 			
 			viewContainer.add(viewButtonContainer);
 			
+			
 			var questionLabel =  Ti.UI.createLabel({
 				left: 5,
+				autoStyle: true,
 				classes: ['title'],
 				text: question.label,
 				title: question.label
 			});
+			
+			if(Ti.Platform.osname == 'iphone'){
+				questionLabel.font = {
+					fontSize: 12
+				};	
+			}
 			
 			viewLabelContainer.add(questionLabel);
 			

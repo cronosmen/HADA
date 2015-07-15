@@ -18,9 +18,16 @@
 	bottom: 10,
 	left: 20,
  	font:{
- 		fontSize: 20
+ 		fontSize: 10
  	},
  	color: "#666"
+},
+
+".title[platform=ios]": {
+ 	font:{
+ 		fontSize: 12
+ 	},
+ 	color: "#000"
 },
 
 
@@ -109,6 +116,13 @@
 	color: "#999",
 	width:"7%",
 },
+
+"Label[platform=ios]": {
+	coor: "#000",
+	font: {
+		fontSize: 10,
+	}
+}
 
 ".icon-close[platform=android]":{
 	font:{
