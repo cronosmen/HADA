@@ -291,6 +291,11 @@ function checkResponse(data){
 	alert("El resultado es: "+res[2]);
 };
 
+/**
+ * @param {Object} questionGroupView Titanium.UI.View
+ * @param {Object} groupQuestionObject Objeto fieldset que contiene información del grupo de preguntas además de sus fields
+ * @param id {Int} identificador unico del fieldset
+ */
 function generateGroupHeader(questionGroupView, groupQuestionObject, id){
 	
 		var groupHeaderView = Ti.UI.createView({
