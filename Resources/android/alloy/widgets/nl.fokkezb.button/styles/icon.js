@@ -455,7 +455,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0064,
+    priority: 100000.0002,
     key: "iconWrap",
     style: {
         width: Ti.UI.SIZE,

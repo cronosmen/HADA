@@ -43,13 +43,13 @@ function Controller() {
         httpClient.open("POST", "http://emac.uv.es/HADA/calculo_ajax.php");
         httpClient.send(questionsResponses);
         httpClient.onload = function() {
-            if (200 == this.status) {
-                var doc = this.responseXML;
-                Titanium.API.log("info", "Response: " + doc);
-                var result = doc.documentElement.getElementsById("contentblock").text();
-                Ti.API.info("Store: " + result);
-            }
+            200 == this.status && checkResponse(this.responseText);
         };
+    }
+    function checkResponse(data) {
+        var patt = '<span(?:[^>]+class="(.*?)"[^>]*)?>(.*?)</span>';
+        var res = data.match(patt);
+        alert("El resultado es: " + res[2]);
     }
     function generateGroupHeader(questionGroupView, groupQuestionObject, id) {
         var groupHeaderView = Ti.UI.createView({
@@ -100,6 +100,7 @@ function Controller() {
                     borderColor: "#336699",
                     color: "#CCC",
                     autoStyle: true,
+                    height: "auto",
                     left: 5,
                     classes: [ "Button" ],
                     id: groupId + "_" + questionId + "_" + optionId,

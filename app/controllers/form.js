@@ -278,17 +278,24 @@ function sendForm(){
   		 //check the response code returned
 	    if(this.status == 200)
 	    {
-	        var doc = this.responseXML;
-	        Titanium.API.log("info","Response: "+doc);
-	        var result = doc.documentElement.getElementsById("contentblock").text();
-	 
-	        Ti.API.info('Store: '+result);
-	 
+	        checkResponse(this.responseText);	        
 	    }
 	 };            
 	
 };
 
+function checkResponse(data){
+	/** BUSCAMOS CUALQUIER CONTENIDO EN UN ELEMENTO SPAN (SOLO EXISTE UNO EN LA RESPUESTA DE LA LLAMADA )**/
+	var patt = "<span(?:[^>]+class=\"(.*?)\"[^>]*)?>(.*?)<\/span>";
+	var res = data.match(patt);
+	alert("El resultado es: "+res[2]);
+};
+
+/**
+ * @param {Object} questionGroupView Titanium.UI.View
+ * @param {Object} groupQuestionObject Objeto fieldset que contiene información del grupo de preguntas además de sus fields
+ * @param id {Int} identificador unico del fieldset
+ */
 function generateGroupHeader(questionGroupView, groupQuestionObject, id){
 	
 		var groupHeaderView = Ti.UI.createView({
@@ -358,6 +365,7 @@ function generateFieldsQuestion(container, field, groupId, questionId){
 					borderColor: '#336699',
 					color: '#CCC',
 					autoStyle: true,
+					height: 'auto',
 					left: 5,
 					classes: ['Button'],
 					id: groupId+'_'+questionId+'_'+optionId,
