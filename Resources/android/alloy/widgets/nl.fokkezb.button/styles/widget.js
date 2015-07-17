@@ -455,7 +455,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0066,
+    priority: 100000.0004,
     key: "outer",
     style: {
         width: Ti.UI.SIZE,
@@ -463,7 +463,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0067,
+    priority: 100000.0005,
     key: "inner",
     style: {
         width: Ti.UI.SIZE,
