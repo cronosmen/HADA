@@ -29,6 +29,7 @@ function Controller() {
             top: 5,
             bottom: 15,
             width: 100,
+            height: 50,
             title: "Enviar",
             id: "submitForm",
             name: "submit",
@@ -135,6 +136,10 @@ function Controller() {
                 keyboardType: "Titanium.UI.KEYBOARD_NUMBER_PAD",
                 color: "#336699"
             });
+            if ("iphone" == Ti.Platform.osname) {
+                fieldTextArea.top = 10;
+                fieldTextArea.left = 5;
+            }
             fieldTextArea.addEventListener("change", function(e) {
                 processQuestionResponse(field.name, e.source.value);
             });
@@ -150,6 +155,7 @@ function Controller() {
                 height: 60,
                 layout: "horizontal"
             });
+            "iphone" == Ti.Platform.osname && (viewContainer.height = 40);
             questionGroupView.add(viewContainer);
             if ("textArea" == question.type) {
                 var viewLabelContainerWidth = "0%";
@@ -170,9 +176,13 @@ function Controller() {
             viewContainer.add(viewButtonContainer);
             var questionLabel = Ti.UI.createLabel({
                 left: 5,
+                autoStyle: true,
                 classes: [ "title" ],
                 text: question.label,
                 title: question.label
+            });
+            "iphone" == Ti.Platform.osname && (questionLabel.font = {
+                fontSize: 12
             });
             viewLabelContainer.add(questionLabel);
             var questionSeparator = Ti.UI.createView({

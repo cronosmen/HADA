@@ -177,6 +177,10 @@ function Controller() {
     $.__views.callBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
         color: "#C41230",
+        font: {
+            fontFamily: "icomoon",
+            fontSize: 24
+        },
         text: "",
         height: 60,
         width: 60,
@@ -185,10 +189,6 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
-        font: {
-            fontSize: 20,
-            fontFamily: "icomoon"
-        },
         left: "10%",
         id: "callBtn"
     });
@@ -197,6 +197,10 @@ function Controller() {
     $.__views.emailBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
         color: "#C41230",
+        font: {
+            fontFamily: "icomoon",
+            fontSize: 24
+        },
         text: "",
         height: 60,
         width: 60,
@@ -205,10 +209,6 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
-        font: {
-            fontSize: 20,
-            fontFamily: "icomoon"
-        },
         left: "10%",
         id: "emailBtn"
     });
@@ -217,6 +217,10 @@ function Controller() {
     $.__views.msgBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
         color: "#C41230",
+        font: {
+            fontFamily: "icomoon",
+            fontSize: 24
+        },
         text: "",
         height: 60,
         width: 60,
@@ -225,10 +229,6 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
-        font: {
-            fontSize: 20,
-            fontFamily: "icomoon"
-        },
         left: "10%",
         id: "msgBtn"
     });
@@ -267,7 +267,7 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 20,
+            fontSize: 18,
             fontFamily: "icomoon"
         },
         text: "",
@@ -300,7 +300,7 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 20,
+            fontSize: 18,
             fontFamily: "icomoon"
         },
         text: "",
@@ -333,7 +333,7 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 20,
+            fontSize: 18,
             fontFamily: "icomoon"
         },
         text: "",
@@ -367,7 +367,7 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 20,
+            fontSize: 18,
             fontFamily: "icomoon"
         },
         text: "",

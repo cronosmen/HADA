@@ -159,10 +159,6 @@ function Controller() {
     $.__views.contactInfo.add($.__views.__alloyId6);
     $.__views.callBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
-        font: {
-            fontFamily: "icomoon",
-            fontSize: 24
-        },
         text: "",
         height: 60,
         width: 60,
@@ -172,6 +168,10 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
+        font: {
+            fontSize: 20,
+            fontFamily: "icomoon"
+        },
         left: "10%",
         id: "callBtn"
     });
@@ -179,10 +179,6 @@ function Controller() {
     callContact ? $.__views.callBtn.addEventListener("click", callContact) : __defers["$.__views.callBtn!click!callContact"] = true;
     $.__views.emailBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
-        font: {
-            fontFamily: "icomoon",
-            fontSize: 24
-        },
         text: "",
         height: 60,
         width: 60,
@@ -192,6 +188,10 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
+        font: {
+            fontSize: 20,
+            fontFamily: "icomoon"
+        },
         left: "10%",
         id: "emailBtn"
     });
@@ -199,10 +199,6 @@ function Controller() {
     emailContact ? $.__views.emailBtn.addEventListener("click", emailContact) : __defers["$.__views.emailBtn!click!emailContact"] = true;
     $.__views.msgBtn = Ti.UI.createLabel({
         autoLink: Ti.UI.AUTOLINK_ALL,
-        font: {
-            fontFamily: "icomoon",
-            fontSize: 24
-        },
         text: "",
         height: 60,
         width: 60,
@@ -212,6 +208,10 @@ function Controller() {
         borderColor: "#C41230",
         backgroundColor: "#33C41230",
         textAlign: "center",
+        font: {
+            fontSize: 20,
+            fontFamily: "icomoon"
+        },
         left: "10%",
         id: "msgBtn"
     });
@@ -249,11 +249,11 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 18,
+            fontSize: 20,
             fontFamily: "icomoon"
         },
-        color: "#C41230",
         text: "",
+        color: "#C41230",
         id: "__alloyId10"
     });
     $.__views.__alloyId9.add($.__views.__alloyId10);
@@ -282,11 +282,11 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 18,
+            fontSize: 20,
             fontFamily: "icomoon"
         },
-        color: "#C41230",
         text: "",
+        color: "#C41230",
         id: "__alloyId12"
     });
     $.__views.__alloyId11.add($.__views.__alloyId12);
@@ -315,11 +315,11 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 18,
+            fontSize: 20,
             fontFamily: "icomoon"
         },
-        color: "#C41230",
         text: "",
+        color: "#C41230",
         id: "__alloyId14"
     });
     $.__views.__alloyId13.add($.__views.__alloyId14);
@@ -349,11 +349,11 @@ function Controller() {
         top: 0,
         left: 0,
         font: {
-            fontSize: 18,
+            fontSize: 20,
             fontFamily: "icomoon"
         },
-        color: "#C41230",
         text: "",
+        color: "#C41230",
         id: "__alloyId16"
     });
     $.__views.__alloyId15.add($.__views.__alloyId16);
