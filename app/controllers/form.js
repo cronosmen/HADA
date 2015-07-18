@@ -21,183 +21,25 @@ Ti.Analytics.featureEvent(Ti.Platform.osname+"."+title+".viewed");
  */
 var questionsResponses = {};
 
-var questions = [{
-			formFieldSet: 'Datos del paciente',
-			fields: [
-				{
-					'label': 'Edad',
-					'name': 'edad',
-					'type': 'text',
-					'required': true
-				},
-				{
-					'label': 'Sexo',
-					'type': 'select',
-					'name': 'var_n',
-					'options': [
-						{'label': 'Hombre', 'value':true},
-						{'label': 'Mujer', 'value': false}
-					]
-				}
-			]
-		},{
-			formFieldSet: 'Sintomas del paciente',
-			fields: [
-				{
-					'label': 'Dolor realizando esfuerzos',
-					'name': 'DolorTipico',
-					'type': 'select', 'options': [
-						{'label': 'No', 'value': false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]
-				}
-			]
-		},{
-			formFieldSet: 'Factor de riesgo',
-			fields: [
-				{
-					'label': 'Nivel de Creatinina',
-					'type': 'text',
-					'name': 'creatinina',
-					'required': true
-				},
-				{
-					'label': 'Fumador',
-				 	'type': 'select',
-				 	'name': 'fumador', 
-				 	'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true}
-					]
-				},
-				{
-					'label': 'HTA',
-					'type': 'select', 
-					'name': 'hta',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]
-				},
-				{
-					'label': 'Antecedentes de hipercolesterolemia',
-					'type': 'select', 
-					'name': 'antcolest',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]
-				},
-				{
-					'label': 'Diabetes mellitus',
-					'type': 'select',
-					'name': 'dm',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]
-				},
-				{
-					'label': 'Antecedentes de cardiopatía isquémica',
-					'type': 'select',
-					'name': 'antfam',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]		
-				},
-				{
-					'label': 'Antecedentes de infarto de miocardio',
-					'type': 'select',
-					'name': 'antiam',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]				
-				},
-				{
-					'label': 'Estenosis coronaria previa',
-					'type': 'select',
-					'name': 'estenosisc',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]				
-				},
-				{
-					'label': 'Ingreso previo por insuficiencia cardíaca',
-					'type': 'select',
-					'name': 'anticc',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]			
-				},
-				{
-					'label': 'ATCP previa',
-					'type': 'select',
-					'name': 'antactp',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]					
-				},
-				{
-					'label': 'Cirugía coronaria previa',
-					'type': 'select',
-					'name': 'antcir',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]				
-				},
-				{
-					'label': 'Arteriopatía periférica',
-					'type': 'select',
-					'name': 'artperif',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]				
-				},
-				{
-					'label': 'Ictus cerebral',
-					'type': 'select',
-					'name': 'ictus',
-					'options': [
-						{'label': 'No', 'value':false},
-						{'label': 'Si', 'value': true},
-						{'label': 'NS', 'value': false}
-					]					
-				}
-			]
-		},{
-			formFieldSet: 'Comentarios',
-			fields: [
-				{
-					'label': 'Comentarios del cas',
-					'type': 'textArea',
-					'name': 'comentario',
-					'required': false
-				},
-			]
-		}
-	];
+/**
+ * @var questions
+ * Contiene las preguntas guardadas en el archivo lib/Form/data.json 
+ */
+var questions;
+
 /** 
  * Function to inialize the View, gathers data from the flat file and sets up the ListView
  */
 function init(){
+	
+	//Accedemos al objeto Filesystem para leer los grupos de preguntas y preguntas
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "Form/data.json"); 
+	
+	/**
+	 * Populamos la variable questions con los grupos de preguntas
+	 */
+	questions = JSON.parse(file.read().text).questions;
+	
 	
 	//Recorremos cada grupo de preguntas con sus preguntas y propiedades
 	_.each(questions, function(groupQuestionObject, id){
@@ -408,7 +250,7 @@ function generateFieldsQuestion(container, field, groupId, questionId){
 		
 		if( field.type == 'text'){
 			var fieldTextArea = Ti.UI.createTextField({
-				hintText: 'test', //Placeholder con el texto de ejemplo, podria  venir dado mediante una propiedade del field
+				hintText: field.placeholder, //Placeholder con el texto de ejemplo, viene definido en la propierade placeholder del field
 				top: 7,
 				keyboardType: "Titanium.UI.KEYBOARD_NUMBER_PAD", //Indicamos que el layout del teclado ha de ser numerico.
 				color:"#336699"

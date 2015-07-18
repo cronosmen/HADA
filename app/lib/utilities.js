@@ -1,4 +1,9 @@
 /**
+ * Utilidades para la aplicacio, son metodos helpers 
+ */
+
+
+/**
  * Returns the distance in kilometers between two lat/long points
  * @param {Float} lat1
  * @param {Float} lon1
