@@ -39,24 +39,5 @@ Alloy.Globals.Navigator = {
 /**
  * Lets add a loading animation - Just for Fun!
  */
-var loadingView = Alloy.createController("loader");
+var loadingView = Alloy.createController("form");
 loadingView.getView().open();
-loadingView.start(); 
-
-setTimeout(function(){
-	loadingView.finish(function(){
-		
-		if(OS_IOS){
-			$.nav.open()
-		}
-		else if(OS_MOBILEWEB){
-			$.index.open();
-		}
-		else{
-			$.index.getView().open();
-		} 
-		
-		loadingView.getView().close();
-		loadingView = null;
-	});
-}, 1500);
