@@ -1,2 +1,8 @@
 build
 Resources
+build/alloy/build.json
+build/android/assets/alloy/controllers/form.js
+Resources/android/alloy/controllers/form.js
+build/map/Resources/android/alloy/controllers/profile.js.map
+build/map/Resources/android/alloy/controllers/form.js.map
+build/android/assets/alloy/controllers/form.js
