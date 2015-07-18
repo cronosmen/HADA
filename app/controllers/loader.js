@@ -1,10 +1,13 @@
+/**
+ * Obtenemos los argumentos que hayan podido ser pasador al controlador 
+ */
 var args = arguments[0] || {};
 
 /**
- * function to start the loading animation
+ * Se encarga de inicializar la animacion
  */
 $.start = function() {
-	//$.overlay.opacity = 0;
+	
 	$.rocketSmoke.opacity = 0.1;
 	$.rocketFlight.opacity = 0;
 	$.rocketFlight.top = null;
@@ -24,7 +27,7 @@ $.start = function() {
 };
 
 /*
- * exposed function to finish the loading animation. Animates the rocket off the screen.
+ * Funcion que se encarga de finalizar la animacion, sacando el cohete fuera de pantalla
  */
 $.finish = function(_callback) {
 	$.rocketFlight.opacity = 0.1;
@@ -55,7 +58,7 @@ $.finish = function(_callback) {
 		}, function() {
 			$.rocketFlight.stop();
 			
-			_callback && _callback();
+			_callback && _callback(); //Ejecutamos los callbacks que se hayan podido pasar al finalizar la animacion, normalmente el callback sera el inicio de la aplicacion indiando que se invoque al controlador de forms
 		});
 	});
 };
