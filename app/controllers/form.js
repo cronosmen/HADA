@@ -46,6 +46,7 @@ function init(){
 		
 		//Para cada grupo generamos un contenedor
 		var questionGroupContainerView = Ti.UI.createView({
+			top: 0,
 			layout: 'horizontal',
 			height: Ti.UI.SIZE,
 		});
