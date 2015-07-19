@@ -1,8 +1,8 @@
 #appname:HADA form
-#publisher:Appcelerator, Inc.
-#url:http://www.appcelerator.com
+#publisher:Enrique Gregori
+#url:http://emav.uv.es/HADA
 #image:appicon.png
-#appid:com.appcelerator.directory
-#desc:A cross platform application for viewing your corporate directory listing, individual profiles and creating bookmarked entries.
-#type:mobile
+#appid:com.appcelerator.hada
+#desc:Test de riesgo de ángina de pecho.
+#type:ipad
 #guid:079f04f3-b90f-40f8-8507-fda660f4f390
