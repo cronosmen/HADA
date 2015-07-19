@@ -1,7 +1,6 @@
-HADA | Test de riesgo de angina de pecho [![HADA](http://emav.uv.es/HADA)]
+HADA | Test de riesgo de angina de pecho [![HADA](http://emac.uv.es/HADA)]
 =======================
 
-![][expanded-app]
 
 Evaluación de riesgo de angina de pecho mediante un test
 
