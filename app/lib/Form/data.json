@@ -48,6 +48,25 @@
                      "value":false
                   }
                ]
+            },
+            {
+               "label":"x2 dolor en 24 horas",
+               "name":"x2angina24",
+               "type":"select",
+               "options":[
+                  {
+                     "label":"No",
+                     "value":false
+                  },
+                  {
+                     "label":"Si",
+                     "value":true
+                  },
+                  {
+                     "label":"NS",
+                     "value":false
+                  }
+               ]
             }
          ]
       },
