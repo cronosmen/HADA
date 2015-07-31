@@ -4,9 +4,21 @@
 	-->
 	<Window title="HADA">
 			
-			<ScrollView layout="vertical" id="wrapper">
-								
-			</ScrollView>
+					<!-- 
+		Menu Item to open the bookmarks view
+		-->
+		<Menu id="menu" platform="android">
+			
+            
+            <!-- Android Menu item for accessing the Bookmarks view-->
+            <MenuItem id="bookmarkBtn" title="Bookmarks" icon="/images/ic_action_action_bookmark.png" onClick="onResultsClick" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM"/>
+        </Menu>
+        
+        <SearchBar id="searchBar" platform="ios" class="search" onBookmark="onResultsClick" />
+
+		<ScrollView layout="vertical" id="wrapper">
+							
+		</ScrollView>
 
 	</Window>
 </Alloy>

@@ -110,16 +110,43 @@ function sendForm(){
 	
 };
 
+
+var onResultsClick = function onClick (e){
+	
+	/**
+	 * Open this same controller into a new page, pass the flag to restrict the list only to favorite Contacts and force the title
+	 */
+	Alloy.Globals.Navigator.open("results",{displayHomeAsUp:true});
+};
+
+
+
 /**
  * Metodo encargado de procesar la respuesta del servidor al formulario enviado y mostrar el resultado. 
  */
 function checkResponse(data){
-	/** BUSCAMOS CUALQUIER CONTENIDO EN UN ELEMENTO SPAN (SOLO EXISTE UNO EN LA RESPUESTA DE LA LLAMADA )**/
-	var patt = "<span(?:[^>]+class=\"(.*?)\"[^>]*)?>(.*?)<\/span>";
-	var res = data.match(patt);
+	console.log("data", data);
+	var regex = /<span(?:[^>]+class=\"(.*?)\"[^>]*)?>(.*?)<\/span>/g;
+	var patt2 = new RegExp(regex);
+
+	var result = patt2.exec(data);
+    var reference = patt2.exec(data);
+    
+    var resultModel = Alloy.createModel("results", {
+    	result    : 	result[2],
+    	reference :     reference[2]
+	});
+	 
+	//This is how we save a model to our databaseif the model already exists, the save will be an "update".
+	resultModel.save();
 	
-	/**TODO: Pantalla de resultado utilizando el navigation window **/
-	alert("El resultado es: "+res[2]);
+	  var dialog = Ti.UI.createAlertDialog({
+		message: 'El resultado es: '+result,
+	ok: 'Okay',
+	title: 'Resultado procesado'
+	  });
+	  dialog.show();
+
 };
 
 /**
@@ -192,6 +219,7 @@ function buttonPressed(e, button){
  * Metodo que genera los field 
  */
 function generateFieldsQuestion(container, field, groupId, questionId){
+		
 		
 		//Cada boton es un element de titanium diferente
 		if( field.type == 'select'){

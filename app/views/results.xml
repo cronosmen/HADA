@@ -1,0 +1,19 @@
+<Alloy>
+	<Collection src="results" />
+	<Window class="container vgroup" title="Resultados">
+		
+		<ActionBar platfor="android" displayHomeAsUp="true" onHomeIconItemSelected="closeWindow" />
+
+		 <TableView dataCollection="results" dataTransform="transformFunction">
+            <!-- Also can use Require -->
+            <TableViewRow layout="vertical" title="{result}">
+            	<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="5" layout="horizontal">
+            		<Label width="20%">Fecha: </Label><Label width="80%" class="title" title="{created}" text="{created}"/>
+            	</View>
+            	<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="5" layout="horizontal">
+            		<Label width="20%">Resultado: </Label><Label width="80%" class="result" title="{result}" text="{result}"/>
+            	</View>
+            </TableViewRow>
+        </TableView>
+	</Window>
+</Alloy>
