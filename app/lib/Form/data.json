@@ -310,7 +310,7 @@
          "formFieldSet":"Comentarios",
          "fields":[
             {
-               "label":"Comentarios del cas",
+               "label":"Comentarios del caso",
                "type":"textArea",
                "name":"comentario",
                "required":false
