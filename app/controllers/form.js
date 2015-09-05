@@ -141,7 +141,7 @@ function checkResponse(data){
 	resultModel.save();
 	
 	  var dialog = Ti.UI.createAlertDialog({
-		message: 'El resultado es: '+result,
+		message: 'El resultado es: '+result[2],
 	ok: 'Okay',
 	title: 'Resultado procesado'
 	  });
