@@ -7,10 +7,4 @@
     		<Require src="form" />
     </NavigationWindow>
     
-    <!-- MobileWeb -->
-    <Window platform="mobileweb">
-    <NavigationGroup id="nav" class="container">
-    	<Require src="form" />
-    </NavigationGroup>
-    </Window>
 </Alloy>
