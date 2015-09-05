@@ -6,12 +6,19 @@
 
 		 <TableView dataCollection="results" dataTransform="transformFunction">
             <!-- Also can use Require -->
-            <TableViewRow layout="vertical" title="{result}">
+            <TableViewRow top="5" layout="vertical" title="{result}">
+            	
             	<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="5" layout="horizontal">
-            		<Label width="20%">Fecha: </Label><Label width="80%" class="title" title="{created}" text="{created}"/>
+            		<Label left="5">Código: </Label>
+            		<Label left="5" title="{reference}" text="{reference}"/>
             	</View>
             	<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="5" layout="horizontal">
-            		<Label width="20%">Resultado: </Label><Label width="80%" class="result" title="{result}" text="{result}"/>
+            		<Label left="5">Fecha: </Label>
+            		<Label left="5" class="title" title="{created}" text="{created}"/>
+            	</View>
+            	<View height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="5" layout="horizontal">
+            		<Label left="5">Resultado: </Label>
+            		<Label left="5" class="result" title="{result}" text="{result}"/>
             	</View>
             </TableViewRow>
         </TableView>
