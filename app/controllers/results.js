@@ -4,7 +4,6 @@ function transformFunction(model) {
 	console.log(model.toJSON());
     // Need to convert the model to a JSON object
     var transform = model.toJSON();
-    transform.result = '[' + transform.result + ']';
     // Example of creating a custom attribute, reference in the view using {custom}
     return transform;
 }
