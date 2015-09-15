@@ -17,14 +17,14 @@ exports.definition = {
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {
-			// extended functions and properties go here
+			// funciones extend y propiedades van aqui
 		});
 
 		return Model;
 	},
 	extendCollection: function(Collection) {
 		_.extend(Collection.prototype, {
-			// extended functions and properties go here
+			// funciones extend y propiedades van aqui
 
 			// For Backbone v1.1.2, uncomment the following to override the
 			// fetch method to account for a breaking change in Backbone.
