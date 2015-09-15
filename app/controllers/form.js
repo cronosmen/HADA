@@ -1,6 +1,6 @@
-/**
- * Instanciamos las variables locales para este controlador
- */
+
+ //Instanciamos las variables locales para este controlador
+ 
 var _args = arguments[0] || {}, //Obtenemos cualquier argumento que se haya pasado al generar la instancia del controlador
 	App = Alloy.Globals.App, //Referencia al objeto singleton de APP
 	indexes = [];  // Necesario para iOS para algunos elementos como listView o listItem
