@@ -4,7 +4,7 @@
 	
     <!-- iOS Window -->
     <NavigationWindow id="nav" platform="ios" class="container">
-    		<Require src="form" />
+    		<Require src="form" /> // este require nos envia a controlador form.js
     </NavigationWindow>
     
 </Alloy>
