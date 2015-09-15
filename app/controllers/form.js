@@ -180,7 +180,7 @@ function generateGroupHeader(questionGroupView, groupQuestionObject, id){
 		groupHeaderView.add(groupHeaderLabel);
 }
 
-
+// Proceso que almacena el objeto de respuestas
 /**
  * Se llama cada vez que se interactua con un field. Este metodo se encarga de añadir respuestas a un hash donde la key es el name del field y el value el valor del field en el formulatio
  */
@@ -190,6 +190,7 @@ function processQuestionResponse(name, value){
 	console.log(questionsResponses);
 }
 
+// Proceso que cambia el color del botón presionado
 /**
  * Se ejecuta al hacer un click sobre qualquier botón del formulario
  */
