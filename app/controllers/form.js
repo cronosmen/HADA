@@ -1,13 +1,13 @@
 
- //Instanciamos las variables locales para este controlador
+ //Definimos variables locales para este controlador
  
 var _args = arguments[0] || {}, //Obtenemos cualquier argumento que se haya pasado al generar la instancia del controlador
 	App = Alloy.Globals.App, //Referencia al objeto singleton de APP
 	indexes = [];  // Necesario para iOS para algunos elementos como listView o listItem
 	
-/**
- * Generamos el titulo de la pantalla y iniciamos servicio de analitica  y mandamos un page view
- */
+
+ //Generamos el titulo de la pantalla e iniciamos servicio de analitica  y mandamos un page view
+
 var title = _args.title ? _args.title.toLowerCase() : "HADA";
 Ti.Analytics.featureEvent(Ti.Platform.osname+"."+title+".viewed");
 
@@ -15,10 +15,10 @@ Ti.Analytics.featureEvent(Ti.Platform.osname+"."+title+".viewed");
  * TODO: Make a form builder for manage questions 
  */
 
-/**
- * @var questionResponses
- * Contiene respuestas del formulario que se añaden dinamicamente en el click o en el input de cada una. 
- */
+
+ //var questionResponses
+ //Contiene respuestas del formulario que se añaden dinamicamente en el click o en el input de cada una. 
+ 
 var questionsResponses = {};
 
 /**
@@ -36,7 +36,7 @@ function init(){
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "Form/data.json"); 
 	
 	/**
-	 * Populamos la variable questions con los grupos de preguntas
+	 * Rellenamos la variable questions con los grupos de preguntas
 	 */
 	questions = JSON.parse(file.read().text).questions;
 	
@@ -60,7 +60,7 @@ function init(){
 		
 	});
 	
-	//Inyectamos el boton de enviar
+	//Añadimos el boton de enviar
 	generateSendButton();
 	
 };
